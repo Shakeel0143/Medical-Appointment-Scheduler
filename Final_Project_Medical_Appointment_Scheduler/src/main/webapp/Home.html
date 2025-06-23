@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+	  body {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+.post-container {
+  margin: 20px 20px 20px 20px;  
+  overflow: auto
+}
+.post-thumb {
+  float: left
+}
+
+.post-content {
+    margin-left: 800px;
+    margin-top: 150px;
+    background-color: #f9f9f9; /* Light gray background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: lightblue;
+}
+
+.post-title {
+    font-weight: bold;
+    font-size: 300%;
+    color: #333333; /* Dark gray text color */
+}
+
+.post-para {
+    font-size: 18px;
+    color: red; /* Medium gray text color */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Add some space after each paragraph */
+}
+
+
+
+  </style>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<header id="home">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="font-family: 'Poppins', sans-serif;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+     <a class="navbar-brand text-capitalize" href="#">
+      <img src="https://github.com/pk-95/Doctor-Appointment-Scheduler/blob/master/src/main/resources/img/sign.jpg?raw=true" width="40" height="40" alt="" loading="lazy" class="mr-2">
+      Patient Dashboard</a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#home"> <i class="fa fa-home mr-1" aria-hidden="true"></i>Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="specialities.html"><i class="fa fa-hospital-o mr-1" aria-hidden="true"></i>Specialities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="doctors.html"> <i class="fa fa-medkit mr-1" aria-hidden="true"></i>Doctors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Registration.html"> <i class="fa fa-medkit mr-1" aria-hidden="true"></i>Book Appointment</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+ 
+  <div class="post-container">                
+    <div class="post-thumb"><img src="https://github.com/pk-95/Doctor-Appointment-Scheduler/blob/master/src/main/resources/img/doc.png?raw=true" alt ="img1" width= "700" height="610"/></div>
+    <div class="post-content">
+        <h4 class="post-title" th:text="'Welcome '+${email}">Welcome</h4><br>
+        
+        <p class="post-para">We are there for you. If you are feeling unwell, then you need a check-up. Book an appointment with an appropriate doctor here.</p>
+   </div>
+
+</header>
+</body>
+</html>

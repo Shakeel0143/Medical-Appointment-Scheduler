@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Appointment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+		body{
+			background-color: lightblue;
+		}
+		p {
+      font-family: Arial;
+      font-weight: bold;
+      color: rgb(71, 71, 71);
+      font-size: 20px;
+      margin: 0;
+    }
+    
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 124px;
+      margin-top: 0;
+      margin-bottom: 0;
+     
+    }
+    
+    .image-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+       row-gap: 20px;
+    }
+    
+    .photo, .photo2, .photo3 {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+    
+    .prof-picture {
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: 10px;
+    }</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="font-family: 'Poppins', sans-serif;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand text-capitalize" href="#">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAxlBMVEX///8zMzM6tUovLy8iIiImJiYsLCwwMDAcHBwpKSkhISElJSUYGBiYmJjv7+9YWFg7Ozvf39/Y2NiysrITExO4uLj5+fnNzc1FRUUnsTtPT0/p6ekzs0Sn2610xn3V1dWmpqZ5eXm/v79wcHCQkJBmZmaR05kAAADT7dbo9emTk5PJ6cyrq6uFhYWhoaHz+vRfX19iwW1IvViBzIrR69S14LprxXYVri+i2qiy4LdYvmRkw3De8eBBuVLt9+59zIeY1p/A48Mx4/nwAAAKCUlEQVR4nO2bCXeiPBfHSQMJARRwAQptcW3tKOJ08Zk6HTt+/y/1JsEFt2nrW7Wcc38zZw4hYcyf3NzcLCgKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAJyjHvu+73r7cCs+t7MstAJVOwExVVTViD6oBseNlTj0go1YpZJrMDYfRGWt5OLFd0zAmjDGCialiSqyFxEaNp4xlLjZr7eJp9JIaoSYLuknStB0NCVhznhdgkcQsGDWT5sgxGWVG46zV/TxRaCIzKFWylNfKJNnzTER5ioZx1gO9OKGM6s1C9ccoYFgr5ars0K02XKRk+aZB1W6BJHohwyjO3xmInqcubg0snjLXClQ1qjaVwpCYlLrrt6ohHvnLVJ2n4vUCLRNZ1RPU7UvwdaTHW3e9f6QEDYMaRbHTLlFLBz1mHvLYGXAt6hzSGLFG0ZdX5igMTe2wthgR1X+/1DegS/TKQQ8OTHP4xXU5Dhg75d05rz3J0/3u7Ngk3eNV6+so1/BoT9b4v0vBf7/2PElweLRqfSGuRdp7sm6uLgSX13vyKQ6KMF7EOtsXnLyn0Nlr39+Kik4OVYjwQcPMqYlqe/3FOwp5PwyOVq2vxMTBHlt7RyH3pft81PdiRIzN8bB/LXiZSIEXVzcvMr05aDQODRVODY9pfmzcupWjxOXFnKts0OhvlLKLEtPsiEtvry62udxQyONS53S1/L/oEmOwfudDCpusKHMLPj+kZL0RP6LQV2mtCGOFpM02Bv0PKPRCfNCs8jxUGK218jc+oPCHWoyQbc5Qpaiea5HbyyvBUpxM5RUmAxXpxXCkc7oEqcZqYen6RvIwFziRqXFvmZ/oGjI3h5jvTYUgRLXWxt15THO1GdOUdLFAXCAb5SSqWNVmG3a3J2prGGJF3KqfrnpfgBcQIXF91XePwoEUWKT1YEkZi5V7aq214k6FDUsI1IoRc+dxmZRYy0vcpXCoy20pu1i9UBJnrajnutc4GzQuc+s0nUxgWIS5/RYxlRJzO4PXj7eCx9VA2MwE7ptQfkcid1XZGMltQ6Ozr7DXVYvWgi3bIU532fUqDpFusr27k0Uhk07GLo7ARCeY/9GXK9dRJtHcqcHPMo0C7YwOLaQhm7Hc4F0O5RY+Ie5W6bohbVgv0DhYNqjcd0jM/Cwh62q0thmxdOQwSI3izJh4oywWSm1s5ZaiEoPKtloLrL2uDGSouYrOB2GwsO4gCP69gVEOA963604g1hJcJzjRKYehqWb1LWlGvsUampRotFed0Q2kjyF0FQ9Exmpf1cTM/udPlR1iNZSqjnX+f7o1XNuM8Y9DwzQb8qLDjLVfbCHpUrRg0bJ1kt0Ic72zoqPlWiJbHkzZQ9mhvHBVRVYkVr6QcZqo3bewjL34z+vrR5zchb/J2rijZnbbznvYPQrL+TJeuZyZ41KhbMO5wvLxTTXAbORHfki2lvUX3c5IeEXmvkdf9zG7FPrtwHGC9nyCUrUdnhqJt7RUSMPAzxQOeVGZZ4dhIF+wOwqDL7Zev0aJyUyMzO2xoVOj2cjYcmQXxJuGtUNhxyIYY8os6YG6OqY8SfRRTiFidy5XqA1tA1NKxNDTUbEubaWp4tpXxxI+VQkhGtq1vdbSZN/DmYVqweZL2FZYtRDl1s3/ijnYwMKEOYhRpA9WCjFvNq4QMaYyk//P3OVULCR9uofo3o3Mwyk3unZ7SEQltph3RpT51a0+wxUiVsvIjsAFGGFuZQOGxIZNOwhCbnyxI+q98jRZP0Qk9N0Wf0BoCjFFnjzVczQH1DCQvqMDeM1sZER414GEio5ycIWxOW/ULqFo6bm8YF1h5kup3FmtMCT2BYamXLYraYgcLeBtqtTY1ccHmjyy5+xaNhQKiZ4hFdYNxAaVOK50GDKks4n8QSckaIdClk1fugQxns7sPcRHMNIFXtekm1sXkjigiHV3npblCklTnJn2/ZgIhbwpkCn0cs8k3pc/IrqqGniXwnmokTChUBlhHCrRcUdJb2QitbnDRiJr33GLLU+zVMi5q/MAhlBDtxs23qFwrmWusCH6Z513iWPOyry2zq1x+6yhV9sXrWwpHKiIDPw5ZS/g/qPuCUt8V2Gk8UZvkiMaqWRo8XfuDDZ85icU+gZSW/nsrGuH77ehfAvo+KGcaxsEq3ri50V+QmHEB3hZNtENUo65QuGgWhrinngVte1UKJp/7l+PS8tWGWU6bg4qix/7hEKlzetrDxrixHiiuNz7hH5c4rZquSuFpN2IthXKg+THNtIMv015QxJVR6Ok4btl7zMKI8xVmTwIJKI12ibCuq4hanUWUVtLDPV3frSlUAwbeRM/KlG1jXSNq2SmbqCwyx357k8r4jujtpgk1wxdeNxKaGmMaZacZJVHMqEjES2UiSjs2TXuZlvunXE3Hy1qRk1e1NWTGOmCsl9qO5Zuim9H+IhPkd3ZMeSXq/XqYpeDX8oG8PwfzWanNe/IrU4z+dGS9fbqsrDnCjcrnsyiXJ9fyYvoVEa6wotajU43UMXiDMWaGpSO+pEMt+JTGekmvM84yDIxNrXkaFbkRQn3cOdaoxSexm2EwskaB3x8MP1AGf/OYkg72yKlla00VpqMUStfi/vnDzw9/W/P8eI8vkUxM862jo6wk/VAt6vyaeIqozf5yOPpB8rEThC2t1cZTsWIaIsfH2o0t4ja+yn+7Y9/Pt4rvduXcTp9G4/7yv3j8+9J//5mciuy07f06dfz758vivJ8M35RnsQ+3ePrVBaazgsp5ROsSe0nv9JY5dPI5dKxVNi7eppePyj9y9vXdPKcvv55vb+8nvYv317vJ2Jbdfon7V9cT3t/ZvwqfejNbvjNSS8r9DgvdGbqBltttiWMLe1UKnzjjaNM+k8PivL0O03T279cCb8z460rxKQPaV9Y8+wm/TNLPW/2pkiFi0IyfWaifNhWJqs5nFT4U+yd3jw//eaKJuIQ6tP9hFeeWyu3XyVT+JYVTq/H43ShcDJ/Vr6GcxNgdeUF2qsTpT2uSvn7yFVc3ff59StvR+V2dv+wqfBSlkt5D/x7Ld3TZU++hm+jsGRqKzMtacslq97F9a++8jD+9fBXkZb49+fL2ySVCn+Lyos2nl6k/fHvX28XU2X8OJs8KZObl5uHniw0+S4KXZ3S5VjF/c6iDdN+f/bK6/jM/5nK82CvL7zO6RO/6k0X955EV5vNxKDRf+El09lz2ks3Cp2bJtOSxXWI2Wc/kfoOzuQdXEYXC8Yt8/OfH8y+gyG+w1BH2c5va+0oygdJPxC3nZ2mgcygmYQmfWcjtLgkNYwZw1gv2InLT+CHpqqaQWG+3T6EyPfPF/4DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABw/gdN6dutPAPYUwAAAABJRU5ErkJggg==" width="100" height="100" alt="logo" loading="lazy" class="mr-2">
+             Specialities</a> 
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="Home.html"><i class="fa fa-home mr-1" aria-hidden="true"></i>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#specialities"><i  aria-hidden="true"></i>Specialities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doctors.html"><i class="fa fa-medkit mr-1" aria-hidden="true"></i>Doctors</a>
+            </li>
+             <li class="nav-item active">
+              <a class="nav-link" href="Registration.html"><i class="fa fa-user mr-1" aria-hidden="true"></i>Book Appointment<span class="sr-only">(current)</span></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="logout.html"><i class="fa fa-medkit mr-1" aria-hidden="true"></i>
+           
+            <button type="button" class="btn btn-outline btn-md btn-warning ml-4" onclick="logout.html"><i class="fa fa-sign-out"></i>Logout</button>
+            </a>
+          </ul>
+        </div>
+      </nav>
+	
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="image-item">
+                    <img class="photo" src="image/cancer.png" alt="Cancer">
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="cancer.html">Cancer</a></p><br>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="image-item">
+                    <img class="photo2" src="image/cardiology.png" alt="Cardiology">
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="cardiology.html">Cardiology</a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="image-item">
+                    <img class="photo3" src="image/CT Surgery.png" alt="CT Surgery">
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="CT_surgery.html">CT Surgery</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="image-item">
+                    <img class="photo" src="image/Gastroenterology.png" alt="Gastroenterology">
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="Gasterontology.html">Gastroenterology</a></p><br>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="image-item">
+                    <img class="photo2" src="image/Liver.png" alt="Liver">
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="liver.html">Liver</a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="image-item">
+                    <img class="photo3" src="image/Mother & Child.png" alt="Mother & Child">
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="mother_child.html">Mother & Child Care</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="image-item">
+                    <img class="photo" src="image/orthopedics.png" alt="Orthopedics">
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="orthopedics.html">Orthopedics</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

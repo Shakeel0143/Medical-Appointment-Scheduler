@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Appointment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body >
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top "style="font-family: 'Poppins', sans-serif;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand text-capitalize" href="#"><img src="data:image/png;base64,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" width="70" height="70" alt="logo" loading="lazy" class="mr-2">Doctor's Appointment</a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="Home.html"> <i class="fa fa-home mr-1" aria-hidden="true"></i>Home</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="specialities.html"><i class="fa fa-hospital-o mr-1" aria-hidden="true"></i>Specialities</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="doctors.html"><i class="fa fa-medkit mr-1" aria-hidden="true"></i>Doctors<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Registration.html"><i class="fa fa-user mr-1" aria-hidden="true"></i>Book Appointment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout.html"><i class="fa fa-medkit mr-1" aria-hidden="true"></i>
+           
+            <button type="button" class="btn btn-outline btn-md btn-warning ml-4" onclick="logout.html"><i class="fa fa-sign-out"></i>Logout</button>
+            </a>
+           </li>
+          </ul>
+          
+        </div>
+      </nav>
+   </header> 
+   <section class="container.fluid pt-3">
+    <table class="table table-light table-hover">
+        <thead class="bg-primary">
+          <tr>
+            <th>Doctor ID</th>
+            <th>Doctor's Name</th>
+            <th>Specialization</th>
+            <th>&nbsp &nbsp &nbsp Slots Available Today</th>
+            <th>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Slots Booked</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1001</td>
+            <td>Smita Naik</td>
+            <td>Cardiologist</td>
+            <td>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            </td>
+            <td>
+            <ul><button type="text" class="btn btn-danger">15:00-14:00 PM</button></ul>
+            <ul><button type="text" class="btn btn-danger">09:00-10:00 PM</button></ul>
+            </td>
+          </tr>
+          <tr>
+            <td>1002</td>
+            <td>S K Raman</td>
+            <td>Oncologist </td>
+            <td>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            </td>
+            <td>
+            <ul><button type="text" class="btn btn-danger">15:00-14:00 PM</button></ul>
+            </td>
+          </tr>
+          <tr>
+            <td>1003</td>
+            <td>Shaileja Ketkar</td>
+            <td>Cardiothoracic surgeon</td>
+             <td>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            </td>
+            <td>
+            <ul><button type="text" class="btn btn-danger">15:00-14:00 PM</button></ul>
+            </td>
+          </tr>
+          <tr>
+            <td>1004</td>
+            <td>Pratik Gupta</td>
+            <td>Gastroenterologist</td>
+             <td>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            </td>
+            <td>
+            <ul><button type="text" class="btn btn-danger">15:00-14:00 PM</button></ul>
+            </td>
+          </tr>
+          <tr>
+            <td>1005</td>
+            <td>Rina Singh</td>
+            <td>Hepatologist</td>
+             <td>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            </td>
+            <td>
+            <ul><button type="text" class="btn btn-danger">15:00-14:00 PM</button></ul>
+            </td>
+          </tr>
+          <tr>
+            <td>1006</td>
+            <td>Karan Patel</td>
+            <td> Pediatrician</td>
+             <td>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            </td>
+            <td>
+            <ul><button type="text" class="btn btn-danger">15:00-14:00 PM</button></ul>
+            </td>
+          </tr>
+          <tr>
+            <td>1007</td>
+            <td>Sarita Iyer</td>
+            <td>Orthopedics</td>
+             <td>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            </td>
+            <td>
+            <ul><button type="text" class="btn btn-danger">15:00-14:00 PM</button></ul>
+            </td>
+          </tr>
+          <tr>
+            <td>1008</td>
+            <td>Shridhar Biswas</td>
+            <td>Audiologist</td>
+             <td>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            </td>
+            <td>
+            <ul><button type="text" class="btn btn-danger">15:00-14:00 PM</button></ul>
+            </td>
+          </tr>
+          <tr>
+            <td>1009</td>
+            <td>Shweta Seth</td>
+            <td>Dentist</td>
+             <td>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            </td>
+            <td>
+            <ul><button type="text" class="btn btn-danger">15:00-14:00 PM</button></ul>
+            </td>
+          </tr>
+          <tr>
+            <td>1010</td>
+            <td>Tilak Mishra</td>
+            <td>Pulmonologist</td>
+             <td>
+            <ul><button type="text" class="btn btn-warning">18:30-19:30 PM</button></ul>
+            </td>
+            <td>
+            <ul><button type="text" class="btn btn-danger">15:00-14:00 PM</button></ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   </section>
+   <footer>
+       <p></p>
+   </footer>
+
+</body>
+</html>
